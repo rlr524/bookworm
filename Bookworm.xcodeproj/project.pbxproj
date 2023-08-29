@@ -7,18 +7,26 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D402247A2A997ED50015843B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D40224792A997ED50015843B /* ContentView.swift */; };
 		D45911A42A96D0D0001A52FB /* BookwormApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D45911A32A96D0D0001A52FB /* BookwormApp.swift */; };
-		D45911A62A96D0D0001A52FB /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D45911A52A96D0D0001A52FB /* ContentView.swift */; };
 		D45911A82A96D0D2001A52FB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D45911A72A96D0D2001A52FB /* Assets.xcassets */; };
 		D45911AB2A96D0D2001A52FB /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D45911AA2A96D0D2001A52FB /* Preview Assets.xcassets */; };
+		D4C3F4192A97E17500DB1652 /* Bookworm.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D4C3F4172A97E17500DB1652 /* Bookworm.xcdatamodeld */; };
+		D4C3F41B2A97EA6700DB1652 /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C3F41A2A97EA6700DB1652 /* DataController.swift */; };
+		D4FC94802A9D62AC009B7849 /* AddBookView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4FC947F2A9D62AC009B7849 /* AddBookView.swift */; };
+		D4FC94832A9D7BAE009B7849 /* RatingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4FC94822A9D7BAE009B7849 /* RatingView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		D40224792A997ED50015843B /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		D45911A02A96D0D0001A52FB /* Bookworm.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Bookworm.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D45911A32A96D0D0001A52FB /* BookwormApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookwormApp.swift; sourceTree = "<group>"; };
-		D45911A52A96D0D0001A52FB /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		D45911A72A96D0D2001A52FB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D45911AA2A96D0D2001A52FB /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		D4C3F4182A97E17500DB1652 /* Bookworm.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Bookworm.xcdatamodel; sourceTree = "<group>"; };
+		D4C3F41A2A97EA6700DB1652 /* DataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
+		D4FC947F2A9D62AC009B7849 /* AddBookView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddBookView.swift; sourceTree = "<group>"; };
+		D4FC94822A9D7BAE009B7849 /* RatingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,7 +60,9 @@
 			isa = PBXGroup;
 			children = (
 				D45911A32A96D0D0001A52FB /* BookwormApp.swift */,
-				D45911A52A96D0D0001A52FB /* ContentView.swift */,
+				D4FC94812A9D62D8009B7849 /* Views */,
+				D4C3F41A2A97EA6700DB1652 /* DataController.swift */,
+				D4C3F4172A97E17500DB1652 /* Bookworm.xcdatamodeld */,
 				D45911A72A96D0D2001A52FB /* Assets.xcassets */,
 				D45911A92A96D0D2001A52FB /* Preview Content */,
 			);
@@ -67,6 +77,16 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+		D4FC94812A9D62D8009B7849 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				D40224792A997ED50015843B /* ContentView.swift */,
+				D4FC947F2A9D62AC009B7849 /* AddBookView.swift */,
+				D4FC94822A9D7BAE009B7849 /* RatingView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -77,6 +97,7 @@
 				D459119C2A96D0D0001A52FB /* Sources */,
 				D459119D2A96D0D0001A52FB /* Frameworks */,
 				D459119E2A96D0D0001A52FB /* Resources */,
+				D4FC94842A9D7EEF009B7849 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -132,13 +153,38 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		D4FC94842A9D7EEF009B7849 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\nif which swiftlint >/dev/null; then\n    swiftlint\nelse\n    echo \"warning: SwiftLint is not installed.\"\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		D459119C2A96D0D0001A52FB /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D45911A62A96D0D0001A52FB /* ContentView.swift in Sources */,
+				D402247A2A997ED50015843B /* ContentView.swift in Sources */,
+				D4C3F41B2A97EA6700DB1652 /* DataController.swift in Sources */,
+				D4C3F4192A97E17500DB1652 /* Bookworm.xcdatamodeld in Sources */,
+				D4FC94832A9D7BAE009B7849 /* RatingView.swift in Sources */,
 				D45911A42A96D0D0001A52FB /* BookwormApp.swift in Sources */,
+				D4FC94802A9D62AC009B7849 /* AddBookView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -339,6 +385,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		D4C3F4172A97E17500DB1652 /* Bookworm.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				D4C3F4182A97E17500DB1652 /* Bookworm.xcdatamodel */,
+			);
+			currentVersion = D4C3F4182A97E17500DB1652 /* Bookworm.xcdatamodel */;
+			path = Bookworm.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = D45911982A96D0D0001A52FB /* Project object */;
 }
