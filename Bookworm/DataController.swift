@@ -12,11 +12,13 @@ import Foundation
 // a class here because we don't want to make copies of our DataController, we want to reference
 // just the one data controller in memory throughout our application.
 class DataController: ObservableObject {
+    static let shared = DataController()
+    
     let container = NSPersistentContainer(name: "Bookworm")
     
     init() {
         container.loadPersistentStores { _, error in
-            if let error = error {
+            if let error = error as NSError? {
                 print("Core data failed to load: \(error.localizedDescription)")
             }
         }
