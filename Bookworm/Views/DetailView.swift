@@ -43,14 +43,19 @@ struct DetailView: View {
     }
 }
 
-//struct DetailView_Previews: PreviewProvider {
-//    static let moc = NSManagedObjectContext(concurrencyType: .mainQueueConcurrencyType)
-//
-//    static var previews: some View {
-//        let book = Book(context: moc)
-//
-//        return NavigationView {
-//            DetailView(book: book)
-//        }
-//    }
-//}
+struct DetailView_Previews: PreviewProvider {
+    static let moc = NSManagedObjectContext(concurrencyType: .mainQueueConcurrencyType)
+    
+    static var previews: some View {
+        let book = Book(context: moc)
+        book.title = "Test Book"
+        book.author = "Test Author"
+        book.genre = "Fantasy"
+        book.rating = 4
+        book.review = "Test review"
+        
+        return NavigationView {
+            DetailView(book: book)
+        }
+    }
+}
