@@ -9,7 +9,8 @@ import SwiftUI
 
 @main
 struct BookwormApp: App {
-    @StateObject private var dataController = DataController.shared
+    // @StateObject private var dataController = DataController.shared
+    let dataController = DataController.shared
     
     var body: some Scene {
         WindowGroup {

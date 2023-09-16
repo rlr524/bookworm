@@ -10,6 +10,9 @@ import CoreData
 
 struct DetailView: View {
     let book: Book
+    @Environment(\.managedObjectContext) var moc
+    @Environment(\.dismiss) var dismiss
+    @State private var showingDeleteAlert = false
     
     var body: some View {
         ScrollView {
@@ -18,7 +21,7 @@ struct DetailView: View {
                     .resizable()
                     .scaledToFit()
                 
-                Text(book.genre?.uppercased() ?? "Fantasy")
+                Text(book.genre?.uppercased() ?? "FANTASY")
                     .font(.caption)
                     .fontWeight(.black)
                     .padding(8)
@@ -37,9 +40,35 @@ struct DetailView: View {
             
             RatingView(rating: .constant(Int(book.rating)))
                 .font(.largeTitle)
+                .padding()
+            
+            if let date = book.date {
+                Text("Book added: " + date.formatted(date: .abbreviated, time: .omitted))
+            }
         }
         .navigationTitle(book.title ?? "Unknown Book")
         .navigationBarTitleDisplayMode(.inline)
+        .alert("Delete book", isPresented: $showingDeleteAlert) {
+            Button("Delete", role: .destructive, action: deleteBook)
+            Button("Cancel", role: .cancel) {}
+        } message: {
+            Text("Are you sure?")
+        }
+        .toolbar {
+            Button {
+                showingDeleteAlert = true
+            } label: {
+                Label("Delete this book", systemImage: "trash")
+            }
+        }
+    }
+    
+    func deleteBook() {
+        moc.delete(book)
+        
+        // Uncomment when the delete should be made permanent
+        // try? moc.save()
+        dismiss()
     }
 }
 

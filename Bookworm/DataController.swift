@@ -21,6 +21,7 @@ class DataController: ObservableObject {
             if let error = error as NSError? {
                 print("Core data failed to load: \(error.localizedDescription)")
             }
+            print("Data controller loaded")
         }
     }
 }
